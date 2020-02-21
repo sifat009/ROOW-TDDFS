@@ -1,14 +1,7 @@
 //Begin a eself-executing anonymous function to move to local scope
 (function() {
   //Begin Global variables
-  var attrArray = [
-    "Something1",
-    "Something2",
-    "Something3",
-    "Something4",
-    "Something5",
-    "Something6"
-  ]; //list of attributes from csv data file
+  var attrArray = ["Something1", "Something2", "PersonName", "Phone"]; //list of attributes from csv data file
 
   //Attribute to be diplayed on the bar chart(Fields from csv data file)
   var expressed = attrArray[0];
@@ -79,13 +72,16 @@
         if (geojsonKey == csvKey) {
           //assign all attributes and values
           attrArray.forEach(function(attr) {
-            var val = parseFloat(csvstates[attr]); //get csv attribute value
+            if (attr === "PersonName" || attr === "Phone" || attr === "Image") {
+              var val = csvstates[attr];
+            } else {
+              var val = parseFloat(csvstates[attr]); //get csv attribute value
+            }
             geojsonProps[attr] = val; //assign attribute and value to geojson properties
           });
         }
       }
     }
-
     return usStates;
   }
   //End function Joining CSV attributes to the USStates special datasest
@@ -214,7 +210,11 @@
   //Begin function to create dynamic label
   function setLabel(props) {
     //label content
-    var labelAttribute = `<h1>${props["NAME"]}</h1>`;
+    var labelAttribute = `
+      <h1>${props["NAME"]}</h1>
+      <h1>${props["PersonName"]}</h1>
+      <h1>${props["Phone"]}</h1>
+      `;
 
     //create info label div
     var infolabel = d3
@@ -252,7 +252,7 @@
 
     d3.select(".infolabel")
       .style("left", x + "px")
-      .style("top", y + "px");
+      .style("top", y - 100 + "px");
   }
 })();
 //End a eself-executing anonymous function to move to local scope

@@ -1,7 +1,8 @@
-html, body {
-width:100%;
-height: 100%;
-margin: 0px;
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
 }
 
 /*This was commented to show the projection in a clear mode
@@ -12,56 +13,55 @@ margin: 0px;
     stroke-width: 0.5px;
 } */
 
-.gratBackground{
-	fill:black;
+.gratBackground {
+  fill: black;
 }
-.state{
-	stroke: black;
-
+.state {
+  stroke: black;
 }
-.map{
-	background-color: black;
+.map {
+  background-color: black;
   border: 3px solid white;
   float: left;
   box-shadow: 4px -1px 90px white;
-	border-radius:5px;
-	stroke: black;
-	stroke-width: 1px;
+  border-radius: 5px;
+  stroke: black;
+  stroke-width: 1px;
   stroke-linecap: round;
 }
 
-.axis{
-	fill:none;
-	color:white;
-	stroke-width:2px;
+.axis {
+  fill: none;
+  color: white;
+  stroke-width: 2px;
 }
 
-
 option {
-    font-weight: normal;
+  font-weight: normal;
 }
 
 .infolabel {
-    margin: 10px 10px 0 0;
-    position: absolute;
-    height: 50px;
-    min-width: 260px;
-    color: #fff;
-    background-color: #07317a;
-    border: solid #19b2c6;
-    padding-left: 6px;
-		font-size:12px;
-		border-radius:8px;
+  margin: 10px 10px 0 0;
+  position: fixed;
+  height: auto;
+  padding-bottom: 10px;
+  min-width: 260px;
+  color: #fff;
+  background-color: #07317a;
+  border: solid #19b2c6;
+  padding-left: 6px;
+  font-size: 12px;
+  border-radius: 8px;
 }
 
 .infolabel h1 {
-    margin: 2px -5px 0 0px;
-    padding-left:0;
-    position:center;
-    line-height: 1em;
-		font-size: 15px;
+  margin: 2px -5px 0 0px;
+  padding-left: 0;
+  position: center;
+  line-height: 1em;
+  font-size: 15px;
 }
 
-body{
+body {
   background-color: black;
 }
